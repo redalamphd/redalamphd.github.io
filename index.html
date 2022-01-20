@@ -28,23 +28,24 @@
         <li><a href="https://drive.google.com/file/d/1pCGVYshwK_LN5dQg7eCaxjY2ciRpQySo/view?usp=sharing"  target="_blank">sujet du TP</a></li>
         <li><a href="https://drive.google.com/file/d/14tjJZ__r73AD67lUSGFQucQD1gvPVSdK/view?usp=sharing"  target="_blank">rimbaud.txt</a></li>
         <li>
+          code de la première question : 
         <div class="container bcontent">
         <pre>
-          import os
-          ## QST 1 ##
-          file_size = os.path.getsize('rimbaud.txt')
-          infile = open("rimbaud.txt", 'r+b')
-          outfile= open("rimbaud2.txt", 'wb')
-          for i in range(file_size) :
-              octet = infile.read(1)
-              print(octet)
-              if octet == b'\x20' : # code hexa ascii de l'espace
-                  print("ok")
-                  outfile.write(b'\x0D') # code hexa ascii du retour ligne
-              else :
-                  outfile.write(octet)
-          infile.close()
-          outfile.close()</p>
+import os
+## QST 1 ##
+file_size = os.path.getsize('rimbaud.txt')
+infile = open("rimbaud.txt", 'r+b')
+outfile= open("rimbaud2.txt", 'wb')
+for i in range(file_size) :
+    octet = infile.read(1)
+    print(octet)
+    if octet == b'\x20' : # code hexa ascii de l'espace
+        print("ok")
+        outfile.write(b'\x0D') # code hexa ascii du retour ligne
+    else :
+        outfile.write(octet)
+infile.close()
+outfile.close()</p>
         </pre>
     </div>
       </li>
